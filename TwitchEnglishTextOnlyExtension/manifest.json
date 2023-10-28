@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Text Filter",
+  "version": "1.0",
+  "description": "Filter out non-English characters from web pages",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["*://www.twitch.tv/*"],
+    "js": ["content.js"]
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
